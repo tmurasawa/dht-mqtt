@@ -52,7 +52,7 @@ const float fVerNum = 0.03;
 DHT dht(DHTPIN, DHTTYPE);   // LED pins
 
 // scalenics
-#define DEVICE_TOKEN "FA2EFC30EC66E07DFD5B7B4124A99E49"
+#define DEVICE_TOKEN "YOUR_DEVICETOKEN_HERE"
 #define DEVICE_ID "arduino01"
 #define MQTT_SERVER "api.scalenics.io"
 // MQTT client
