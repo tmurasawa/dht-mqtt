@@ -52,6 +52,7 @@ const float fVerNum = 0.03;
 DHT dht(DHTPIN, DHTTYPE);   // LED pins
 
 // scalenics
+#define SC_USER "YOUR_SCALENICS_ACCOUNT"
 #define DEVICE_TOKEN "YOUR_DEVICETOKEN_HERE"
 #define DEVICE_ID "arduino01"
 #define MQTT_SERVER "api.scalenics.io"
@@ -142,7 +143,7 @@ void loop()
 
 
   // if you get a connection, report back via serial:
-  if (client2.connect(DEVICE_ID)) {
+  if (client2.connect(DEVICE_ID, SC_USER, DEVICE_TOKEN)) {
     topic.toCharArray(mqtt_topic, topic.length() + 1);
     PostData.toCharArray(mqtt_payload, PostData.length() + 1);
     Serial.println("mqtt_topic=");
