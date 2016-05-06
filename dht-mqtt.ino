@@ -57,7 +57,7 @@ DHT dht(DHTPIN, DHTTYPE);   // LED pins
 #define DEVICE_ID "arduino01"
 #define MQTT_SERVER "api.scalenics.io"
 // MQTT client
-PubSubClient client2(MQTT_SERVER, 1883, callback, Ethclient);
+PubSubClient client2(Ethclient);
 
 String topic;
 String PostData;
@@ -77,6 +77,9 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
     dht.begin();
+  // 
+  client2.setServer(MQTT_SERVER, 1883);
+  client2.setCallback(callback);
 
   }
 
@@ -162,4 +165,3 @@ void loop()
 
 
 }
-
