@@ -57,7 +57,8 @@ DHT dht(DHTPIN, DHTTYPE);   // LED pins
 #define DEVICE_ID "arduino01"
 #define MQTT_SERVER "api.scalenics.io"
 // MQTT client
-PubSubClient client2(Ethclient);
+//PubSubClient client2(Ethclient);
+PubSubClient client2(MQTT_SERVER, 1883, callback, Ethclient);
 
 String topic;
 String PostData;
